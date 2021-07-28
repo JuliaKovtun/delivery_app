@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_121603) do
+ActiveRecord::Schema.define(version: 2021_07_28_203920) do
 
   create_table "couriers", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 2021_07_26_121603) do
   create_table "packages", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "courier_id", null: false
+    t.index ["courier_id"], name: "index_packages_on_courier_id"
   end
 
+  add_foreign_key "packages", "couriers"
 end
