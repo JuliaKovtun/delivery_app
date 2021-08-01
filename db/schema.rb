@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_07_28_203920) do
   end
 
   create_table "packages", force: :cascade do |t|
+    t.string "tracking_number"
+    t.boolean "delivery_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "courier_id", null: false
