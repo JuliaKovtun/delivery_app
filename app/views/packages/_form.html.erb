@@ -1,0 +1,13 @@
+<%= form_with model: [ @courier, @courier.packages.build ] do |form| %>
+  <p>
+    <%= form.label :tracking_number %><br>
+    <%= form.text_field :tracking_number %>
+  </p>
+  <p>
+    <%= form.check_box :delivery_status %>
+    <%= form.label :delivery_status, "Delivery status" %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
